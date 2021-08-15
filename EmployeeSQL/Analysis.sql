@@ -1,9 +1,6 @@
 /*
 Data Analysis:
- 8. In descending order, list the frequency count of employee last names,
- 		i.e., how many employees share each last name.'''
 */
-
 
 
 /*  [1.] Employee number, last name, first name, sex, and salary */
@@ -74,6 +71,8 @@ FROM dept_emp AS de
 JOIN employees AS e USING (emp_no)
 JOIN departments AS d USING (dept_no)
 
+
+
 /* [5.] List first name, last name, and sex for employees whose 
         first name is "Hercules" and last names begin with "B."  */
 SELECT first_name, last_name, sex
@@ -113,3 +112,14 @@ OR dept_name = 'Development';
 
 --- Best practice to drop view once finished. 
 DROP VIEW sales_dept;
+
+
+
+/* [8.] In descending order, list the frequency count of employee last names,
+ 		i.e., how many employees share each last name. */
+SELECT last_name, COUNT(last_name) AS "frequency"
+FROM employees
+Group BY last_name
+ORDER BY COUNT(last_name) DESC;
+
+---212 Rabehasainas but only 1 person with last name Foolsday?!
