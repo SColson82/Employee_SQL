@@ -1,7 +1,6 @@
 /*
 Data Analysis:
  
- 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
  6. List all employees in the Sales department: 
  		including their employee number, last name, first name, and department name.
  7. List all employees in the Sales and Development departments:
@@ -10,7 +9,8 @@ Data Analysis:
  		i.e., how many employees share each last name.'''
 */
 
---- 1. Employee number, last name, first name, sex, and salary
+/*  [1.] Employee number, last name, first name, sex, and salary */
+
 SELECT *
 FROM employees; 
 SELECT *
@@ -22,7 +22,8 @@ FROM employees AS e
 INNER JOIN salaries AS s ON
 e.emp_no = s.emp_no;
 
---- 2. List first name, last name, and hire date for employees who were hired in 1986.
+/* [2.] List first name, last name, and hire date for employees who were hired in 1986. */
+
 SELECT *
 FROM employees; 
 
@@ -32,8 +33,8 @@ WHERE hire_date
 BETWEEN '1986-01-01'
 AND '1986-12-31';
 
---- 3. List the manager of each department with the following information: 
-     ---department number, department name, the manager's employee number, last name, first name.
+/*  [3.] List the manager of each department with the following information: 
+         department number, department name, the manager's employee number, last name, first name. */
 
 SELECT * 
 FROM dept_manager  ---emp_no and dept_no
@@ -53,8 +54,8 @@ FROM dept_manager AS m
 JOIN departments AS d USING (dept_no)
 JOIN employees AS e USING (emp_no);
 
---- 4. List the department of each employee with the following information: 
- 	   --- employee number, last name, first name, and department name.
+/* [4.] List the department of each employee with the following information: 
+ 	    employee number, last name, first name, and department name. */
 
 SELECT *
 FROM dept_emp   --- emp_no and dept_no
@@ -68,7 +69,11 @@ FROM departments   --- dept_name (join on dept_no)
 SELECT *
 FROM employees   --- last_name, first_name (join on emp_no)
 
+---Join employees and departments on dept_emp. 
 SELECT de.emp_no, e.last_name, e.first_name, d.dept_name
 FROM dept_emp AS de
 JOIN employees AS e USING (emp_no)
 JOIN departments AS d USING (dept_no)
+
+--- 5. List first name, last name, and sex for employees whose 
+       ---first name is "Hercules" and last names begin with "B."
