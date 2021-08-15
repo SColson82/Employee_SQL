@@ -1,7 +1,5 @@
 /*
 Data Analysis:
- 7. List all employees in the Sales and Development departments:
-		including their employee number, last name, first name, and department name.
  8. In descending order, list the frequency count of employee last names,
  		i.e., how many employees share each last name.'''
 */
@@ -101,6 +99,17 @@ JOIN departments AS d USING (dept_no);
 SELECT *
 FROM sales_dept
 WHERE dept_name = 'Sales';
+
+
+
+/* [7.] List all employees in the Sales and Development departments:
+		employee number, last name, first name, and department name. */
+
+--- Borrow the created 'View' from number 6. 
+SELECT *
+FROM sales_dept
+WHERE dept_name = 'Sales'
+OR dept_name = 'Development';
 
 --- Best practice to drop view once finished. 
 DROP VIEW sales_dept;
