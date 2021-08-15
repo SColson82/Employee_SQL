@@ -9,8 +9,9 @@ Data Analysis:
  		i.e., how many employees share each last name.'''
 */
 
-/*  [1.] Employee number, last name, first name, sex, and salary */
 
+
+/*  [1.] Employee number, last name, first name, sex, and salary */
 SELECT *
 FROM employees; 
 SELECT *
@@ -22,8 +23,9 @@ FROM employees AS e
 INNER JOIN salaries AS s ON
 e.emp_no = s.emp_no;
 
-/* [2.] List first name, last name, and hire date for employees who were hired in 1986. */
 
+
+/* [2.] List first name, last name, and hire date for employees who were hired in 1986. */
 SELECT *
 FROM employees; 
 
@@ -33,9 +35,10 @@ WHERE hire_date
 BETWEEN '1986-01-01'
 AND '1986-12-31';
 
+
+
 /*  [3.] List the manager of each department with the following information: 
          department number, department name, the manager's employee number, last name, first name. */
-
 SELECT * 
 FROM dept_manager  ---emp_no and dept_no
 
@@ -54,9 +57,10 @@ FROM dept_manager AS m
 JOIN departments AS d USING (dept_no)
 JOIN employees AS e USING (emp_no);
 
+
+
 /* [4.] List the department of each employee with the following information: 
  	    employee number, last name, first name, and department name. */
-
 SELECT *
 FROM dept_emp   --- emp_no and dept_no
 
@@ -75,5 +79,11 @@ FROM dept_emp AS de
 JOIN employees AS e USING (emp_no)
 JOIN departments AS d USING (dept_no)
 
---- 5. List first name, last name, and sex for employees whose 
-       ---first name is "Hercules" and last names begin with "B."
+/* [5.] List first name, last name, and sex for employees whose 
+        first name is "Hercules" and last names begin with "B."  */
+SELECT first_name, last_name, sex
+FROM employees
+WHERE first_name =
+'Hercules'
+AND last_name
+LIKE 'B%';
