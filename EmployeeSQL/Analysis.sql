@@ -1,8 +1,5 @@
 /*
 Data Analysis:
- 
- 6. List all employees in the Sales department: 
- 		including their employee number, last name, first name, and department name.
  7. List all employees in the Sales and Development departments:
 		including their employee number, last name, first name, and department name.
  8. In descending order, list the frequency count of employee last names,
@@ -87,3 +84,23 @@ WHERE first_name =
 'Hercules'
 AND last_name
 LIKE 'B%';
+
+
+
+/* [6.] List all employees in the Sales department: 
+ 		employee number, last name, first name, and department name. */
+
+--- Borrow the queried data from number 3 and filter it using "View"
+CREATE VIEW sales_dept AS
+SELECT de.emp_no, e.last_name, e.first_name, d.dept_name
+FROM dept_emp AS de
+JOIN employees AS e USING (emp_no)
+JOIN departments AS d USING (dept_no);
+
+--- Filter the requested data. 
+SELECT *
+FROM sales_dept
+WHERE dept_name = 'Sales';
+
+--- Best practice to drop view once finished. 
+DROP VIEW sales_dept;
