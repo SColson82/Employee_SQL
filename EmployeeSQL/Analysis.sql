@@ -1,66 +1,23 @@
-DROP TABLE departments;
-DROP TABLE dept_emp; 
-DROP TABLE dept_manager;
-DROP TABLE employees;
-DROP TABLE salaries;
-DROP TABLE titles;
+/*
+Data Analysis:
+ - List the following details of each employee: employee number, last name, first name, sex, and salary.
+ - List first name, last name, and hire date for employees who were hired in 1986.
+ - List the manager of each department with the following information: 
+        department number, department name, the manager's employee number, last name, first name.
+ - List the department of each employee with the following information: 
+ 		employee number, last name, first name, and department name.
+ - List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+ - List all employees in the Sales department: 
+ 		including their employee number, last name, first name, and department name.
+ - List all employees in the Sales and Development departments:
+		including their employee number, last name, first name, and department name.
+ - In descending order, list the frequency count of employee last names,
+ 		i.e., how many employees share each last name.'''
+*/
 
-CREATE TABLE departments (dept_no VARCHAR(20),
-						  dept_name VARCHAR(30)
-);
-						  
-CREATE TABLE dept_emp (emp_no INT,
-					   dept_no VARCHAR(30)
-);
-					   
-CREATE TABLE dept_manager (dept_no VARCHAR(30),
-						   emp_no INT
-);
-						   
-CREATE TABLE employees (emp_no INT,
-						emp_title_id VARCHAR(30),
-						birth_date DATE,
-						first_name VARCHAR(30),
-						last_name VARCHAR(30),
-						sex VARCHAR(10),
-						hire_date DATE
-);
-						
-CREATE TABLE salaries (emp_no INT,
-					   salary INT
-);
-					   
-CREATE TABLE titles (title_id VARCHAR(10),
-					 title VARCHAR(30)
-);
-					 
+--- Employee number, last name, first name, sex, and salary
 SELECT *
-FROM departments;
-					 
-SELECT *
-FROM dept_emp;
+FROM employees; ---(emp_no, last_name, first_name, sex)
 
 SELECT *
-FROM dept_emp
-WHERE emp_no = 11022
-
-SELECT COUNT(emp_no)
-FROM dept_emp;
-					 
-SELECT *
-FROM dept_manager;
-					 
-SELECT *
-FROM employees;
-
-SELECT COUNT(emp_no)
-FROM employees;
-					 
-SELECT *
-FROM salaries;
-
-SELECT COUNT(emp_no)
-From salaries;
-
-SELECT *
-FROM titles;
+FROM salaries;  ---(salary, join on emp_no)

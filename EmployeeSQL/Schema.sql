@@ -1,14 +1,9 @@
 '''
-Data Engineering
+Data Engineering:
  --- Create a table schema for each of the six CSV files. 
- --- specify data types, primary keys, foreign keys, and other constraints
-
-For the primary keys check to see if the column is unique, otherwise create a composite key. 
-Which takes two primary keys in order to uniquely identify a row.
-Be sure to create tables in the correct order to handle foreign keys.
-Import each CSV file into the corresponding SQL table. 
-Note be sure to import the data in the same order that the tables were created and 
-account for the headers when importing to avoid errors.
+ --- Specify data types, primary keys, foreign keys, and other constraints.
+ --- Create composite keys where necessary.
+ --- Import data in correct order from CSV files. 
 '''
 
 --- To drop tables so I can reload if/when needed in the correct order.
@@ -46,7 +41,7 @@ CREATE TABLE dept_manager (dept_no VARCHAR(30) NOT NULL,
 );
 
 '''Since there are multipe employees per department and multiple employees are 
-in more than one department dept_emp requires a composite key.'''
+in more than one department, dept_emp requires a composite key.'''
 CREATE TABLE dept_emp (emp_no INT NOT NULL,
 					   dept_no VARCHAR(30) NOT NULL,
 					   PRIMARY KEY (emp_no, dept_no),
