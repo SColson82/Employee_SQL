@@ -1,7 +1,6 @@
 /*
 Data Analysis:
- 4. List the department of each employee with the following information: 
- 		employee number, last name, first name, and department name.
+ 
  5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
  6. List all employees in the Sales department: 
  		including their employee number, last name, first name, and department name.
@@ -53,3 +52,23 @@ SELECT m.dept_no, d.dept_name, m.emp_no, e.last_name, e.first_name
 FROM dept_manager AS m
 JOIN departments AS d USING (dept_no)
 JOIN employees AS e USING (emp_no);
+
+--- 4. List the department of each employee with the following information: 
+ 	   --- employee number, last name, first name, and department name.
+
+SELECT *
+FROM dept_emp   --- emp_no and dept_no
+
+SELECT COUNT(*)
+FROM dept_emp    --- 331603 rows
+
+SELECT *
+FROM departments   --- dept_name (join on dept_no)
+
+SELECT *
+FROM employees   --- last_name, first_name (join on emp_no)
+
+SELECT de.emp_no, e.last_name, e.first_name, d.dept_name
+FROM dept_emp AS de
+JOIN employees AS e USING (emp_no)
+JOIN departments AS d USING (dept_no)
