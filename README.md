@@ -5,7 +5,7 @@ For this challenge, I was presented with a set of tables in CSV format which my 
 ## Data Engineering
 The first objective was to review the information and determine how each table was related to the others and also to determine primary, foreign, and composite keys where needed. For this I needed to build an ERD.
 
-![QuickDBD-Free Diagram](images\QuickDBD-Free_Diagram.png)
+![QuickDBD-Free Diagram](images/QuickDBD-Free_Diagram.png)
 
 ## Data Analysis
 Once this was complete, I was ready to build the tables and import the data for analysis!
