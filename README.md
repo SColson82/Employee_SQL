@@ -28,3 +28,9 @@ It was at this point that I realized I had been fed a set of fake data and was b
 
 ## 🎆 Epilogue: 
 Alright, I admit that I did enjoy putting on a few finishing touches to prove my caliber. When I presented all of this information to my new boss she had a surprise I hadn't considered. She suggested I check my own employee number... 499942. Apparently, I am the fool... "April Foolsday"!! 
+
+<hr>
+Contact:
+
+* https://www.linkedin.com/in/sharon-colson-515222210/
+* sharon.colson@gmail.com
