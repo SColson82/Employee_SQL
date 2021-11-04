@@ -32,5 +32,5 @@ Alright, I admit that I did enjoy putting on a few finishing touches to prove my
 <hr>
 Contact:
 
-* https://www.linkedin.com/in/sharon-colson-515222210/
+* https://www.linkedin.com/in/sharon-colson
 * sharon.colson@gmail.com
